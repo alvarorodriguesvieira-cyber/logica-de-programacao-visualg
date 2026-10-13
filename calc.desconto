@@ -1,0 +1,16 @@
+algoritmo "desconto"
+var
+preco: real
+desconto: real
+valorFinal: real
+inicio
+Escreval("Digite o valor da compra:")
+Leia(preco)
+Se (preco >= 100) entao
+   desconto <- preco * 0.10
+   valorFinal <- preco - desconto
+   Escreval("Desconto de 10%. Valor final: ", valorFinal)
+Senao
+   Escreval("Sem desconto. Valor final: ", preco)
+FimSe
+fimalgoritmo
