@@ -1,0 +1,31 @@
+algoritmo "calculo_imc"
+var
+   alt, peso, imc: real
+
+inicio
+   Escreva("Qual a sua altura (em metros)? ")
+   Leia(alt)
+   Escreva("Qual o seu peso (em kg)? ")
+   Leia(peso)
+
+   imc <- peso / (alt ^ 2)
+
+   Escreval("")
+   Escreval("Seu IMC e: ", imc:5:2)
+
+   // Estrutura simplificada sem redundâncias
+   Se (imc < 18.5) entao
+      Escreval("Classificacao: Abaixo do peso ideal")
+   Senao Se (imc <= 24.9) entao
+      Escreval("Classificacao: Peso ideal")
+   Senao Se (imc <= 29.9) entao
+      Escreval("Classificacao: Sobrepeso")
+   Senao Se (imc <= 34.9) entao
+      Escreval("Classificacao: Obesidade Grau I")
+   Senao Se (imc <= 39.9) entao
+      Escreval("Classificacao: Obesidade Grau II (Severa)")
+   Senao
+      Escreval("Classificacao: Obesidade Grau III (Morbida)")
+   FimSe
+
+fimalgoritmo
