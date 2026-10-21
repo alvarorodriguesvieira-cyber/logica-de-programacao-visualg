@@ -1,0 +1,52 @@
+
+algoritmo "ConversorDeMoedasComSoma"
+// Disciplina : Algoritmos e Lógica de Programação
+// Professor  : Gustavo Guanabara (Curso em Vídeo)
+// Descrição  : Converte múltiplos valores de Real para Dólar e acumula a soma total das conversões.
+// Autor      : Álvaro
+// Data       : 20/10/2026
+
+var
+   valorReal, valorDolar, cotacao, somaReais, somaDolares: real
+   contador, quantidade: inteiro
+
+inicio
+   contador <- 1
+   somaReais <- 0
+   somaDolares <- 0
+
+   Escreval("========================================")
+   Escreval("     CONVERSOR DE MOEDAS (R$ → US$)     ")
+   Escreval("========================================")
+   Escreval("")
+
+   Escreva("Digite a cotação atual do Dólar: US$ 1 = R$ ")
+   Leia(cotacao)
+
+   Escreva("Quantas conversões você deseja fazer? ")
+   Leia(quantidade)
+   Escreval("")
+
+   Enquanto (contador <= quantidade) faca
+      Escreva("Digite o valor em R$ da ", contador, "ª conversão: ")
+      Leia(valorReal)
+
+      valorDolar <- valorReal / cotacao
+
+      // Acumuladores
+      somaReais <- somaReais + valorReal
+      somaDolares <- somaDolares + valorDolar
+
+      Escreval("→ Convertido: US$ ", valorDolar:5:2)
+      Escreval("")
+      contador <- contador + 1
+   FimEnquanto
+
+   Escreval("========================================")
+   Escreval("              RESUMO FINAL              ")
+   Escreval("========================================")
+   Escreval("Total em Reais digitados : R$ ", somaReais:5:2)
+   Escreval("Total convertido em Dólar: US$ ", somaDolares:5:2)
+   Escreval("========================================")
+
+fimalgoritmo
