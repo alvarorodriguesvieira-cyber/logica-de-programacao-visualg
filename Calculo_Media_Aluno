@@ -1,40 +1,45 @@
 algoritmo "Calculo_Media_Aluno"
-// Disciplina : Logica de Programacao e Algoritmos
-// Professor  : Projeto Pratico de Aprendizado
-// Descricao  : Recebe duas notas de um aluno, calcula a media e exibe a situacao (Aprovado/Reprovado) com relatorio formatado.
+// Disciplina : Lógica de Programação e Algoritmos
+// Descrição  : Recebe duas notas, calcula a média e informa a situação do aluno (Aprovado, Recuperação ou Reprovado)
 // Autor      : Álvaro
-// Data       : 17/10/2026
+// Data       : 20/10/2026
 
 var
-   media, nota1, nota2: real
+   nota1, nota2, media: real
 
 inicio
-   // Entrada de Dados
-   Escreva("Digite sua nota da primeira prova: ")
-   Leia(nota1)
-   
-   Escreva("Digite sua nota da segunda prova: ")
-   Leia(nota2)
-   
-   // Processamento: Calculo da media aritmetica
-   media <- (nota1 + nota2) / 2
-   
-   Escreval("") // Quebra de linha para organizacao visual
-   
-   // Tomada de Decisao (Condicional)
-   se media <= 4.5 entao
-      Escreval("Status: Voce foi REPROVADO")
-   senao
-      Escreval("Status: Voce foi APROVADO!")
-   fimse
+   Escreval("========================================")
+   Escreval("     CÁLCULO DE MÉDIA DO ALUNO          ")
+   Escreval("========================================")
+   Escreval("")
 
-   // Relatorio Final de Desempenho (Exibido para ambos os casos)
-   Escreval("---------------------------------------")
-   Escreval("RESUMO DO DESEMPENHO ACADEMICO")
-   Escreval("---------------------------------------")
-   Escreval("Primeira Nota : ", nota1:2:1)
-   Escreval("Segunda Nota  : ", nota2:2:1)
-   Escreval("Media Final   : ", media:2:1)
-   Escreval("---------------------------------------")
+   Escreva("Digite a nota da primeira prova: ")
+   Leia(nota1)
+
+   Escreva("Digite a nota da segunda prova: ")
+   Leia(nota2)
+
+   // Cálculo da média
+   media <- (nota1 + nota2) / 2
+
+   Escreval("")
+   Escreval("----------------------------------------")
+   Escreval("           RESULTADO FINAL              ")
+   Escreval("----------------------------------------")
+   Escreval("Primeira Nota : ", nota1:5:1)
+   Escreval("Segunda Nota  : ", nota2:5:1)
+   Escreval("Média Final   : ", media:5:1)
+   Escreval("----------------------------------------")
+
+   // Situação do aluno
+   Se (media >= 7) entao
+      Escreval("Situação: APROVADO! Parabéns!")
+   Senao Se (media >= 5) entao
+      Escreval("Situação: RECUPERAÇÃO")
+   Senao
+      Escreval("Situação: REPROVADO")
+   FimSe
+
+   Escreval("========================================")
 
 fimalgoritmo
